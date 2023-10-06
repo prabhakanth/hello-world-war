@@ -10,8 +10,8 @@
         <distributionManagement>
             <repository>
                 <id>central</id>
-                <name>a0m4btem8vr3v-artifactory-primary-0-releases</name>
-                <url>https://prabhakanth.jfrog.io/artifactory/libs-release</url>
+                <name>a0jql8bla7kra-artifactory-primary-0-releases</name>
+                <url>https://prabhakanthgc.jfrog.io/artifactory/libs-release</url>
             </repository>
         </distributionManagement>
 	<build>
