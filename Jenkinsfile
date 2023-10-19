@@ -23,7 +23,7 @@ pipeline {
         stage('deploy') {
             steps {
                 echo "good"
-                sh 'sudo cp /home/ubuntu/workspace/tom_assignment/target/hello-world-war-3.0.0.war /var/lib/tomcat9/webapps/'
+                sh 'sudo cp /home/ubuntu/workspace/tom_installation/target/hello-world-war-3.0.0.war /var/lib/tomcat9/webapps/'
             }
         }
     }
