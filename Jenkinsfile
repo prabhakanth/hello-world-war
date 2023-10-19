@@ -1,10 +1,10 @@
 pipeline {
-    agent {
-	    label 'slave1'
-    }
+   agent {
+	 label 'slave5'
+            }
       stages {
         stage('checkout') {
-	   steps {
+            steps {
 		sh 'rm -rf hello-world-war'    
 		sh 'git clone https://github.com/prabhakanth/hello-world-war/'
             }
@@ -14,16 +14,17 @@ pipeline {
 		sh 'mvn clean package'
 	    }
 	}
-	stage('tomcat installation') {
+	      stage('tomcat installation') {
             steps {		
-		sh 'sh tomcat.sh'
+		sh 'sh automation.sh'
+		    echo "tomcat installed"
 	    }
 	}
-	stage('deploy')      
+        stage('deploy') {
             steps {
-		    
-	            sh 'sudo cp /home/ubuntu/workspace/tom_installation/target/hello-world-war-3.0.0.war /var/lib/tomcat9/webapps'//
+		    echo "good"
+	            sh 'sudo cp /home/ubuntu/workspace/assignmentpipe/target/hello-world-war-5.0.0.war /var/lib/tomcat9/webapps'
             }
-        }    
-    }
+        }    
+    }
 }
