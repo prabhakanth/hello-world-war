@@ -1,6 +1,7 @@
 pipeline {
     agent {
 	    label 'slave1'
+    }
       stages {
         stage('checkout') {
 	   
@@ -13,7 +14,8 @@ pipeline {
             steps {		
 		sh 'mvn clean package'
 	    }
-	}stage('tomcat installation') {
+	}
+	stage('tomcat installation') {
             steps {		
 		sh 'sh tomcat.sh'
 	    }
@@ -23,6 +25,7 @@ pipeline {
 	     agent {
 	     label 'slave2'
             }
+	}
             steps {
 		    echo "good "
 	            sh 'sudo cp /home/ubuntu/workspace/tom_installation/target/hello-world-war-3.0.0.war /var/lib/tomcat9/webapps'//
