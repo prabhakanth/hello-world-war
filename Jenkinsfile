@@ -14,7 +14,7 @@ pipeline {
 		sh 'mvn clean package'
 	    }
 	}
-	      stage('tomcat installation') {
+	stage('tomcat installation') {
             steps {		
 		sh 'sh tomcat.sh'
 		    echo "tomcat installed"
@@ -25,6 +25,6 @@ pipeline {
 		    echo "good"
 	            sh 'sudo cp /home/ubuntu/workspace/tom_assignment/target/hello-world-war-3.0.0.war /var/lib/tomcat9/webapps'
             }
-            
+	}    
     }
 }
