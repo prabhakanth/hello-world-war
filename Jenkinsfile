@@ -4,8 +4,7 @@ pipeline {
     }
       stages {
         stage('checkout') {
-	   
-            steps {
+	   steps {
 		sh 'rm -rf hello-world-war'    
 		sh 'git clone https://github.com/prabhakanth/hello-world-war/'
             }
@@ -20,14 +19,9 @@ pipeline {
 		sh 'sh tomcat.sh'
 	    }
 	}
-	      
-        stage('deploy') {
-	     agent {
-	     label 'slave2'
-            }
-	}
+	stage('deploy')      
             steps {
-		    echo "good "
+		    
 	            sh 'sudo cp /home/ubuntu/workspace/tom_installation/target/hello-world-war-3.0.0.war /var/lib/tomcat9/webapps'//
             }
         }    
