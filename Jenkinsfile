@@ -26,5 +26,5 @@ pipeline {
                 sh 'sudo cp /home/ubuntu/workspace/tom_assignment/target/hello-world-war-3.0.0.war /var/lib/tomcat9/webapps'
             }
         }
-    }
+    }
 }
