@@ -16,14 +16,14 @@ pipeline {
 	}
 	      stage('tomcat installation') {
             steps {		
-		sh 'sh automation.sh'
+		sh 'sh tomcat.sh'
 		    echo "tomcat installed"
 	    }
 	}
         stage('deploy') {
             steps {
 		    echo "good"
-	            sh 'sudo cp /home/ubuntu/workspace/assignmentpipe/target/hello-world-war-5.0.0.war /var/lib/tomcat9/webapps'
+	            sh 'sudo cp /home/ubuntu/workspace/tom_assignment/target/hello-world-war-5.0.0.war /var/lib/tomcat9/webapps'
             }
         }    
     }
